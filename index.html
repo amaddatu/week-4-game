@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Week-4-Game</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+</head>
+
+<body>
+
+<div id="main-container">
+	
+<div id="game-title">
+	Crystals Collector!
+</div>
+
+<div id="game-rules">
+	<p>You will be given a random number at the start of the game.</p>
+
+	<p>There are four crystals below. By clicking on a crystal you will add a
+	specific amount of points to your total score.</p>
+
+	<p>You win the game by matching your total score to the random number from
+	the start of the game. You lose the game if your total score goes above the
+	random number.</p>
+
+	<p>The value of each crystal is hidden from you until you click on it.</p>
+
+	<p>Each time when the game starts, the game will change the values of each
+	Crystal Gem.</p>
+</div>
+
+<div class="sbs-container">
+	<div id="wins">
+		<div class="title">Wins:</div>
+		<div class="number"><span id="valTotalWins">00</span></div>
+	</div>
+
+	<div id="losses">
+		<div class="title">Losses:</div>
+		<div class="number"><span id="valTotalLosses">00</span></div>
+	</div>
+</div>
+
+<div class="sbs-container">
+
+	<div id="target-number">
+		<div class="title">Target Number:</div>
+		<div class="number"><span id="valTargetNumber">00</span></div>
+	</div>
+
+	<div id="running-total">
+		<div class="title">Running Total:</div>
+		<div class="number"><span id="valRunningTotal">00</span></div>
+	</div>
+
+</div>
+
+<div id="message">
+	<span id="valMessage">Welcome!</span>
+</div>
+
+<div id="crystal-buttons">
+	<img src="assets/images/steven.png" id="button1" onclick="addCrystal(event.currentTarget.id)">
+	<img src="assets/images/amethyst.png" id="button2" onclick="addCrystal(event.currentTarget.id)">
+	<img src="assets/images/rose.png" id="button3" onclick="addCrystal(event.currentTarget.id)">
+	<img src="assets/images/lapis.png" id="button4" onclick="addCrystal(event.currentTarget.id)">
+</div>
+
+</div><!-- main-container -->
+
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</body>
+</html>
