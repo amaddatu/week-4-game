@@ -1,21 +1,15 @@
 body {
-	background-color: #222631;		
+	background-color: #222631;
 	font-family: Verdana, Geneva, sans-serif;
 	color: white;
 	font-weight: bold;
 }
 
 #main-container {
-	padding-top: 1px;
-	width: 600px;
-    margin: 0 auto;
     background-color: black;
 }
 
 #game-title {
-	height: 32px;
-	padding: 10px;
-	margin: 10px;
 	background-color: #FD5690;
 	text-align: center;
 	font-size: 24px;
@@ -24,18 +18,14 @@ body {
 }
 
 #game-rules {
-	padding: 10px;
-	margin: 10px;
 	background-color: #9324C6;
 }
 
 .sbs-container {
-	overflow:hidden;
 }
 
 .title {
 	text-align: center;
-	margin-bottom: 10px;
 }
 
 .number {
@@ -44,60 +34,29 @@ body {
 }
 
 #wins {
-	padding: 10px;
-	margin: 10px;
  	background-color: #C86C95;
-
-	width:260px;
-	float:left;
 }
 
 #losses {
-	padding: 10px;
-	margin: 10px;
  	background-color: #C95F8D;
-
-	width:260px;
-	float:left;
 }
 
 #target-number {
-	padding: 10px;
-	margin: 10px;
-
 	background-color: #236BE7;
-
-	width:260px;
-	float:left;
 }
 
 #running-total {
-	padding: 10px;
-	margin: 10px;
-
 	background-color: #1E8FF4;
-
-	width:260px;
-	float:left;
 }
 
 #message {
-	padding: 10px 10px 0px 10px;
-	margin: 10px;
 	text-align: center;
 	color: white;
 	font-weight: bold;
-	display: block;
 }
 
 #crystal-buttons {
-	padding: 10px;
-	margin: 10px;
-	text-align: center;
 }
 
 #crystal-buttons img {
-	width: 100px;
-	height: 100px;
-	padding: 15px;
 }
