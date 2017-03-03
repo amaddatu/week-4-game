@@ -1,8 +1,18 @@
-/* you will notice that i like to use viewport width when possible
-for any responsive design, normally, you would like to use viewport
-width as your measuring tool... only one type of browser will not 
-be able to use your website. for those browsers, make sure to use
-percentages as your failsafe backup.
+/* you will notice that i like to use viewport width or percentage
+when possible for any responsive design, normally, you would like 
+to use percentage as your measuring tool... only one type of browser
+will not be able to use your website. for those browsers, make sure to use
+percentages/pixels as your failsafe backup.
+*/
+
+/*
+I did not want to customize bootstrap yet, so I did not add the
+additional breakpoints for landscape phone vs portrait phone.
+Alternatively, I could use max-height/max-width for particular
+elements to support landscape or change font-size/height/widths
+when the screen-size height shrinks. But I got lazy.
+So the supported devices are phones/ipads in portrait mode and 
+desktop which is still a significant improvement over fixed width.
 */
 body {
 	background-color: #222631;
