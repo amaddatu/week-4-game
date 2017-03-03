@@ -24,6 +24,7 @@ body {
     background-position: 50% 0%;
     background-size:cover;
     background-attachment: scroll;
+    background-repeat:no-repeat;
 }
 
 #main {
@@ -33,6 +34,7 @@ body {
 
 #game-title {
 	background-color: #FD5690;
+	background-color: rgba(253, 86, 144, 0.7);
 	text-align: center;
 	font-size: 24px;
 	font-size: 4vw;
@@ -44,6 +46,7 @@ body {
 	text-align:center;
 }
 #game-rules-button{
+	background-color: rgba(91,192,222,0.7);
 	margin:2%;
 	width:50%;
 	font-size:20px;
@@ -52,6 +55,7 @@ body {
 }
 #game-rules {
 	background-color: #9324C6;
+	background-color: rgba(147,36,198,0.7);
 	padding:3%;
 	text-align:left;
 	font-size:14px;
@@ -87,18 +91,22 @@ body {
 
 #wins {
  	background-color: #C86C95;
+	background-color: rgba(200,108,149, 0.7);
 }
 
 #losses {
  	background-color: #C95F8D;
+	background-color: rgba(201,95,141, 0.7);
 }
 
 #target-number {
 	background-color: #236BE7;
+	background-color: rgba(35,107,231, 0.7);
 }
 
 #running-total {
 	background-color: #1E8FF4;
+	background-color: rgba(30, 143, 244, 0.7);
 }
 
 #message {
@@ -129,6 +137,9 @@ body {
 	/*this uses viewport width*/
 	width:41.66666667vw;
 	height:37.66666667vw;
+
+	transition: padding .3s linear;
+	opacity:0.8;
 }
 @media screen and (min-width: 768px){
 	.title {
