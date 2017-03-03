@@ -274,12 +274,9 @@ $(document).ready(function(){
         if(musicTimers.length <= 0 || musicTimers[0].running === false){
             musicIntervalTimer.start(musicChange);
             musicChange();
-            giphyIntervalTimer.start(giphyChange);
-            giphyChange();
             $('#main').removeClass('normal');
         }
         else{
-            giphyIntervalTimer.stop();
             musicStop();
             $('body').attr('style', '');
             $('#main').addClass('normal');
