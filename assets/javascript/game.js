@@ -146,14 +146,39 @@ function musicChange(){
     }
     musicTimerReset();
 }
+function musicClear(){
+    for(var i = 0; i < musicTimers.length; i++){
+        musicTimers[i].stop();
+    }
+    musicTimers = [];
+}
+
+function musicStop(){
+    if(musicIntervalTimer.running === true)
+    {
+        musicIntervalTimer.stop();
+        music.pause();
+        music.currentTime = 0;
+        musicClear();
+        
+    }
+    else
+    {
+        musicIntervalTimer.start(music.add);
+    }
+    
+}
 
 //creates all timers for music reactions
 function musicTimerReset(){
-    for(var i = 0; i < musicTimers.length; i++){
-        musicTimers.stop();
-    }
-    musicTimers = [];
+    musicClear();
+    var boxTime = createCircuitTimer(111);
+    musicTimers.push(boxTime);
+    setTimeout(function(){
+        musicTimers[0].start(titleExpander);
+    }, 200);
     /*
+    music change times???
 14.753s
 28.979s
 ? - 14.226s
@@ -197,26 +222,23 @@ function musicTimerReset(){
 function musicCreateTimer(microSec){
     var mTime = createSimpleTimer(microSec);
     mTime.start(musicReact);
-}
-function musicCreateTimer2(microSec){
-    var mTime = createSimpleTimer(microSec);
-    mTime.start(musicReact2);
+    musicTimers.push(mTime);
 }
 //music reaction
 function musicReact(){
     $('.crystal').css('padding', musicCSS);
-    setTimeout(function(){
+    var mTime = createSimpleTimer(musicCSSLength);
+    mTime.start(function(){
         $('.crystal').attr('style', '');
-    }, musicCSSLength);
-}
-//alternate music version
-function musicReact2(){
-    $('.crystal').css('padding', musicCSS);
-    setTimeout(function(){
-        $('.crystal').attr('style', '');
-    }, musicCSSLength/2);
+    });
+    //too short... do not need to keep track
+    //musicTimers.push(mTime);
 }
 
+function titleExpander(){
+    var spacing = generateRandom(0,20)/10.0;
+    $('#game-title').css('letter-spacing',spacing+'vw');
+}
 
 
 // --------------------------------------------------------
@@ -232,16 +254,36 @@ $(document).ready(function(){
                 console.log(response);
                 giphyResponse = response;
                 //I put this here to do my initial giphychange
-                giphyChange();
+                //giphyChange();
             }
     });
 
     giphyIntervalTimer = createCircuitTimer(5000);
-    giphyIntervalTimer.start(giphyChange);
+    //giphyIntervalTimer.start(giphyChange);
     
     musicIntervalTimer = createCircuitTimer(187547);
-    musicIntervalTimer.start(musicChange);
-    musicChange();
+    //musicIntervalTimer.start(musicChange);
+    //musicChange();
+
+    $('#game-title').on("click", function(){
+        if(musicTimers.length <= 0 || musicTimers[0].running === false){
+            musicIntervalTimer.start(musicChange);
+            musicChange();
+            giphyIntervalTimer.start(giphyChange);
+            giphyChange();
+            $('#main').removeClass('normal');
+        }
+        else{
+            musicTimers[0].stop();
+            musicIntervalTimer.stop();
+            giphyIntervalTimer.stop();
+            music.pause();
+            music.currentTime = 0;
+            $('body').attr('style', '');
+            $('#main').addClass('normal');
+            $('#game-title').attr('style', '');
+        }
+    });
     //http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC
 });
 

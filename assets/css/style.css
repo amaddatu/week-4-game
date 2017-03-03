@@ -40,6 +40,11 @@ body {
 	font-size: 4vw;
 	font-weight: 900;
 	padding:2.5%;
+	transition: letter-spacing .2s linear;
+}
+
+.normal #game-title {
+	background-color: #FD5690;
 }
 
 #game-rules-wrapper{
@@ -53,6 +58,9 @@ body {
 	font-size:4vw;
 	border-radius:0px;
 }
+.normal #game-rules-button{
+	background-color: rgba(91,192,222,1);
+}
 #game-rules {
 	background-color: #9324C6;
 	background-color: rgba(147,36,198,0.7);
@@ -60,6 +68,10 @@ body {
 	text-align:left;
 	font-size:14px;
 	font-size:2.4vw;
+}
+
+.normal #game-rules {
+	background-color: #9324C6;
 }
 
 .sbs-container {
@@ -107,6 +119,22 @@ body {
 #running-total {
 	background-color: #1E8FF4;
 	background-color: rgba(30, 143, 244, 0.7);
+}
+
+.normal #wins {
+ 	background-color: #C86C95;
+}
+
+.normal #losses {
+ 	background-color: #C95F8D;
+}
+
+.normal #target-number {
+	background-color: #236BE7;
+}
+
+.normal #running-total {
+	background-color: #1E8FF4;
 }
 
 #message {
