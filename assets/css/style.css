@@ -163,6 +163,7 @@ body {
 
 	/*fixes issue with crystals not lining up*/
 	/*this uses viewport width*/
+	/* i wanted all crystals to be the same size*/
 	width:41.66666667vw;
 	height:37.66666667vw;
 
@@ -198,6 +199,7 @@ body {
 
 		/*fixes issue with crystals not lining up*/
 		/*this uses viewport width*/
+		/* i wanted all crystals to be the same size*/
 		height:22vw;
 		width:25vw;
 	}
