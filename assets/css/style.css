@@ -19,10 +19,16 @@ body {
 	font-family: "Verdana", "Geneva", sans-serif;
 	color: white;
 	font-weight: bold;
+
+    /* add rules that will support my giphy images */
+    background-position: 50% 0%;
+    background-size:cover;
+    background-attachment: scroll;
 }
 
 #main {
-    background-color: black;
+	background-color: black;
+    background-color: rgba(0,0,0,.5);
 }
 
 #game-title {

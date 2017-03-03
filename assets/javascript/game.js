@@ -8,6 +8,35 @@ var totalLosses = 0;
 var crystal_1, crystal_2, crystal_3, crystal_4;
 var targetNumber, runningTotal;
 
+var giphyIntervalTimer = null;
+var giphyResponse = null;
+
+
+// --------------------------------------------------------
+// Object Constructor
+//function to create circuit timers or "smart interval timers"
+function createCircuitTimer(timeInterval){
+    return {
+        time: timeInterval
+        , interval: null
+        , rotation: 0
+        , running: false
+        , start: function(callMe){
+            //clue: remember the booleans!!!
+            if(this.running !== true){
+                this.interval = setInterval(callMe, this.time);
+                this.running = true;
+            }
+        }
+        , stop: function(){
+            //clue: remember the booleans!!!
+            if(this.running === true){
+                clearInterval(this.interval);
+                this.running = false;
+            }
+        }
+    };
+};
 
 // --------------------------------------------------------
 // Functions
@@ -69,6 +98,13 @@ function doGameLogic() {
         newGame();
     }
 }
+function giphyChange(){
+    console.log('giphy changed');
+    if(giphyResponse != null)
+    {
+        $('body').css('background-image','url(' + giphyResponse.data[generateRandom(0, giphyResponse.data.length-1)].images.original.url + ')');
+    }
+}
 
 
 
@@ -76,6 +112,23 @@ function doGameLogic() {
 // Game
 $(document).ready(function(){
     newGame();
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=fast+cars&limit=100&api_key=dc6zaTOxFJmzC"
+    $.ajax({
+        url: queryURL
+        , method: 'GET'
+        , success: 
+            function(response){
+                console.log(response);
+                giphyResponse = response;
+                //I put this here to do my initial giphychange
+                giphyChange();
+            }
+    });
+
+    giphyIntervalTimer = createCircuitTimer(5000);
+    giphyIntervalTimer.start(giphyChange);
+    
+    //http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC
 });
 
 
