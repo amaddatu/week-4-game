@@ -1,13 +1,3 @@
-/*
- $("#number-to-guess").text(targetNumber);
- */
-
-// --------------------------------------------------------
-// Functions
-
-function generateRandom(min, max) {
-    return Math.floor(Math.random()*(max-min+1)+min);
-}
 
 // --------------------------------------------------------
 // Initial setup
@@ -18,10 +8,13 @@ var totalLosses = 0;
 var crystal_1, crystal_2, crystal_3, crystal_4;
 var targetNumber, runningTotal;
 
-newGame();
 
 // --------------------------------------------------------
-// Game
+// Functions
+
+function generateRandom(min, max) {
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
 
 function newGame() {
     targetNumber = generateRandom(19, 120);
@@ -77,5 +70,12 @@ function doGameLogic() {
     }
 }
 
+
+
+// --------------------------------------------------------
+// Game
+$(document).ready(function(){
+    newGame();
+});
 
 
