@@ -161,11 +161,12 @@ function musicStop(){
         music.pause();
         music.currentTime = 0;
         musicClear();
-        
+        //we will reset this interval later
+        giphyIntervalTimer.stop();
     }
     else
     {
-        musicIntervalTimer.start(music.add);
+        //musicIntervalTimer.start(music.add);
     }
     
 }
@@ -173,6 +174,8 @@ function musicStop(){
 //creates all timers for music reactions
 function musicTimerReset(){
     musicClear();
+    giphyIntervalTimer.start(giphyChange);
+    giphyChange();
     var boxTime = createCircuitTimer(111);
     musicTimers.push(boxTime);
     setTimeout(function(){
