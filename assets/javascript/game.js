@@ -15,6 +15,7 @@ var musicIntervalTimer = null;
 var music = new Audio('assets/music/saintsrow4.mp3');
 var musicTimers = [];
 var musicCSS = "20%";
+var musicCSSOpacity = ".4";
 var musicCSSLength = 500;
 
 
@@ -227,6 +228,7 @@ function musicCreateTimer(microSec){
 //music reaction
 function musicReact(){
     $('.crystal').css('padding', musicCSS);
+    $('.crystal').css('opacity', musicCSSOpacity);
     var mTime = createSimpleTimer(musicCSSLength);
     mTime.start(function(){
         $('.crystal').attr('style', '');
@@ -274,11 +276,8 @@ $(document).ready(function(){
             $('#main').removeClass('normal');
         }
         else{
-            musicTimers[0].stop();
-            musicIntervalTimer.stop();
             giphyIntervalTimer.stop();
-            music.pause();
-            music.currentTime = 0;
+            musicStop();
             $('body').attr('style', '');
             $('#main').addClass('normal');
             $('#game-title').attr('style', '');

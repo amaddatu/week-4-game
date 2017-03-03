@@ -203,3 +203,6 @@ body {
 	}
 }
 
+.normal #crystal-buttons img {
+	opacity: 1.0;
+}
