@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang='en-us'>
 <head>
+	<!-- remember to include this UTF-8 tag... -->
 	<meta charset="UTF-8">
+	<!-- adding this to increase mobile compatibility -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Week-4-Game</title>
 	<!-- should have bootstrap css first -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -16,63 +19,86 @@
 
 <body>
 
-<div id="main-container">
+<div id="main" class="container-fluid">
+
+<div class="row">
+	<div id="game-title-wrapper" class="col-xs-12">
+		<h1 id="game-title">
+			Crystals Collector!
+		</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div id="game-rules-wrapper" class="col-xs-12">
+		<a href="#game-rules" id="game-rules-button" class="btn btn-info" data-toggle="collapse">Rules</a>
+		<div id="game-rules" class="collapse">
+			<p>You will be given a random number at the start of the game.</p>
+
+			<p>There are four crystals below. By clicking on a crystal you will add a
+			specific amount of points to your total score.</p>
+
+			<p>You win the game by matching your total score to the random number from
+			the start of the game. You lose the game if your total score goes above the
+			random number.</p>
+
+			<p>The value of each crystal is hidden from you until you click on it.</p>
+
+			<p>Each time when the game starts, the game will change the values of each
+			Crystal Gem.</p>
+		</div>
 	
-<div id="game-title">
-	Crystals Collector!
-</div>
-
-<div id="game-rules">
-	<p>You will be given a random number at the start of the game.</p>
-
-	<p>There are four crystals below. By clicking on a crystal you will add a
-	specific amount of points to your total score.</p>
-
-	<p>You win the game by matching your total score to the random number from
-	the start of the game. You lose the game if your total score goes above the
-	random number.</p>
-
-	<p>The value of each crystal is hidden from you until you click on it.</p>
-
-	<p>Each time when the game starts, the game will change the values of each
-	Crystal Gem.</p>
-</div>
-
-<div class="sbs-container">
-	<div id="wins">
-		<div class="title">Wins:</div>
-		<div class="number"><span id="valTotalWins">00</span></div>
-	</div>
-
-	<div id="losses">
-		<div class="title">Losses:</div>
-		<div class="number"><span id="valTotalLosses">00</span></div>
 	</div>
 </div>
 
-<div class="sbs-container">
-
-	<div id="target-number">
-		<div class="title">Target Number:</div>
-		<div class="number"><span id="valTargetNumber">00</span></div>
+<div class="sbs-container row">
+	<div class="col-xs-6 col-sm-3">
+		<div id="wins" class="sbs-inner">
+			<div class="title">Wins:</div>
+			<div class="number"><span id="valTotalWins">00</span></div>
+		</div>
 	</div>
 
-	<div id="running-total">
-		<div class="title">Running Total:</div>
-		<div class="number"><span id="valRunningTotal">00</span></div>
+	<div class="col-xs-6 col-sm-3">
+		<div id="losses" class="sbs-inner">
+			<div class="title">Losses:</div>
+			<div class="number"><span id="valTotalLosses">00</span></div>
+		</div>
+	</div>
+	<div class="col-xs-6 col-sm-3">
+		<div id="target-number" class="sbs-inner">
+			<div class="title">Target Number:</div>
+			<div class="number"><span id="valTargetNumber">00</span></div>
+		</div>
+	</div>
+
+	<div class="col-xs-6 col-sm-3">
+		<div id="running-total" class="sbs-inner">
+			<div class="title">Running Total:</div>
+			<div class="number"><span id="valRunningTotal">00</span></div>
+		</div>
 	</div>
 
 </div>
 
-<div id="message">
-	<span id="valMessage">Welcome!</span>
+<div id="message" class="row">
+	<span id="valMessage" class="col-xs-12">Welcome!</span>
 </div>
 
-<div id="crystal-buttons">
-	<img src="assets/images/steven.png" id="button1" onclick="addCrystal(event.currentTarget.id)">
-	<img src="assets/images/amethyst.png" id="button2" onclick="addCrystal(event.currentTarget.id)">
-	<img src="assets/images/rose.png" id="button3" onclick="addCrystal(event.currentTarget.id)">
-	<img src="assets/images/lapis.png" id="button4" onclick="addCrystal(event.currentTarget.id)">
+<div id="crystal-buttons" class="row">
+	<!-- want to center crystals and reset center and resize for slightly larger screens -->
+	<div class="col-xs-offset-1 col-xs-5 col-sm-offset-0 col-sm-3">
+		<img src="assets/images/steven.png" id="button1" onclick="addCrystal(event.currentTarget.id)" class="img-responsive">
+	</div>
+	<div class="col-xs-5 col-sm-3">
+		<img src="assets/images/amethyst.png" id="button2" onclick="addCrystal(event.currentTarget.id)" class="img-responsive">
+	</div>
+	<div class="col-xs-offset-1 col-xs-5 col-sm-offset-0 col-sm-3">
+		<img src="assets/images/rose.png" id="button3" onclick="addCrystal(event.currentTarget.id)" class="img-responsive">
+	</div>
+	<div class="col-xs-5 col-sm-3">
+		<img src="assets/images/lapis.png" id="button4" onclick="addCrystal(event.currentTarget.id)" class="img-responsive">
+	</div>
 </div>
 
 </div><!-- main-container -->

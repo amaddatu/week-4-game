@@ -1,11 +1,17 @@
+/* you will notice that i like to use viewport width when possible
+for any responsive design, normally, you would like to use viewport
+width as your measuring tool... only one type of browser will not 
+be able to use your website. for those browsers, make sure to use
+percentages as your failsafe backup.
+*/
 body {
 	background-color: #222631;
-	font-family: Verdana, Geneva, sans-serif;
+	font-family: "Verdana", "Geneva", sans-serif;
 	color: white;
 	font-weight: bold;
 }
 
-#main-container {
+#main {
     background-color: black;
 }
 
@@ -13,25 +19,55 @@ body {
 	background-color: #FD5690;
 	text-align: center;
 	font-size: 24px;
+	font-size: 4vw;
 	font-weight: 900;
-
+	padding:2.5%;
 }
 
+#game-rules-wrapper{
+	text-align:center;
+}
+#game-rules-button{
+	margin:2%;
+	width:50%;
+	font-size:20px;
+	font-size:4vw;
+	border-radius:0px;
+}
 #game-rules {
 	background-color: #9324C6;
+	padding:3%;
+	text-align:left;
+	font-size:14px;
+	font-size:2.4vw;
 }
 
 .sbs-container {
 }
 
 .title {
+	/*using viewport whenever possible and having pixel as a fallback*/
+    font-size: 16px;
+    font-size: 4vw;
 	text-align: center;
 }
 
 .number {
 	text-align: center;
-	font-size: 24px;
+	font-size: 26px;
+	font-size: 6.5vw;
 }
+.sbs-inner{
+	padding:9%;
+	padding:2vw;
+	height:20vw;
+	margin-top:5%;
+}
+
+.sbs-container{
+}
+
+
 
 #wins {
  	background-color: #C86C95;
@@ -53,10 +89,62 @@ body {
 	text-align: center;
 	color: white;
 	font-weight: bold;
+	padding: 5% 0% 2%;
+
+	font-size: 33px;
+	font-size: 6vw;
 }
 
 #crystal-buttons {
+
+}
+#crystal-buttons img {
+	/* changes cursor to hand*/
+	cursor: pointer; 
+	cursor: hand;
+
+	padding:11%;
+	padding:4vw;
+	
+	/*max-height with percentage does not do anything*/
+	/*max-height:41.66666667%;*/
+
+	/*fixes issue with crystals not lining up*/
+	/*this uses viewport width*/
+	width:41.66666667vw;
+	height:37.66666667vw;
+}
+@media screen and (min-width: 768px){
+	.title {
+		/*using viewport whenever possible and having pixel as a fallback*/
+	    font-size: 14px;
+	    font-size: 1.9vw;
+		text-align: center;
+	}
+
+	.number {
+		text-align: center;
+		font-size: 34px;
+		font-size: 4.5vw;
+	}
+	.sbs-inner{
+		padding:9%;
+		padding:2vw;
+		max-height:13vw;
+	}
+
+	/*aligns with bootstrap's breakpoint rules for small screens*/
+	#crystal-buttons img {
+		padding:9%;
+		padding:2vw;
+		
+		/*max-height with percentage does not do anything*/
+		/*max-height:25%;*/
+
+		/*fixes issue with crystals not lining up*/
+		/*this uses viewport width*/
+		height:22vw;
+		width:25vw;
+	}
 }
 
-#crystal-buttons img {
-}
