@@ -136,11 +136,11 @@ function giphyChange(){
 }
 //plays the music
 function musicChange(){
-    console.log('music changed');
-    if(music.duration > 0 && !music.paused){
+    if(!music.paused){
         music.pause();
         music.currentTime = 0;
         music.play();
+        console.log('music reset');
     }
     else{
         music.play();
@@ -283,6 +283,9 @@ $(document).ready(function(){
             $('#game-title').attr('style', '');
         }
     });
+    /*music.onseeking = function() {
+        alert("Seek operation began!");
+    };*/
     //http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC
 });
 
